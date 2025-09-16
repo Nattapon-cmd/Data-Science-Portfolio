@@ -39,7 +39,52 @@ def calculate_laptop_price(release_year, ram_size_gb):
 price_example_1 = calculate_laptop_price(release_year=2023, ram_size_gb=16)
 price_example_2 = calculate_laptop_price(release_year=2025, ram_size_gb=32)
 
-## Example Output
+Example Output
 The program will display the final calculated price as shown below:
+
 The price of a 2023 laptop with 16GB RAM is: 29000.00 Baht
 The price of a 2025 laptop with 32GB RAM is: 45000.00 Baht
+---
+
+# Laptop Price Estimator
+
+## Overview
+This project is a simple simulation model designed to estimate the price of a laptop using two main factors: the age of the laptop and the amount of RAM. It's a great way to practice using functions and conditional logic in Python.
+
+---
+## How It Works
+The core principle lies in the function. `calculate_laptop_price()` uses a formula to calculate the price based on these factors:
+- **Base price:** Starting at 25,000 baht
+- **Age discount:** The price will decrease by 2,000 baht per year as the laptop ages.
+- **RAM increment:** The price will increase by 1,500 baht for every 8 GB of RAM added above the base 8 GB.
+- **Base price:** The function guarantees that the price will not fall below 10,000 baht, even for very old laptops.
+
+---
+## Usage
+Users can call the function by passing in two variables: `year` (the year of release, e.g., 2024) and `ram_gb` (the amount of RAM in GB, e.g., 16).
+
+```python
+def calculate_laptop_price(year, ram_gb):
+"""
+Calculates the laptop price based on the year and RAM.
+This is a simplified example.
+"""
+base_price = 25,000 
+year_factor = (2025 - year) * 2000 
+ram_factor = (ram_gb - 8) * 1500 
+price = base_price - year_factor + ram_factor 
+return max(price, 10000)
+
+# Example Usage
+laptop_option_1 = calculate_laptop_price(2024, 16)
+laptop_option_2 = calculate_laptop_price(2023, 32)
+laptop_option_3 = calculate_laptop_price(2025, 8)
+laptop_option_4 = calculate_laptop_price(2022, 64)
+
+Example Output
+The program displays the calculated price for each option based on the provided code:
+
+Option 1: price is 35000 THB
+Option 2: Price is 57000 THB
+Option 3: Price is 25000 THB
+Option 4: Price is 103000 THB
