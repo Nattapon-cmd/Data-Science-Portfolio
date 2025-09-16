@@ -88,3 +88,52 @@ Option 1: price is 35000 THB
 Option 2: Price is 57000 THB
 Option 3: Price is 25000 THB
 Option 4: Price is 103000 THB
+
+---
+
+# Electricity Cost Calculator
+
+## Overview
+โปรเจกต์นี้เป็นสคริปต์ Python ที่เรียบง่ายสำหรับคำนวณค่าใช้จ่ายไฟฟ้าทั้งหมด โดยอิงจากปริมาณการใช้งานไฟฟ้าและราคาต่อหน่วย เป็นการฝึกใช้ฟังก์ชันและตัวแปรในภาษา Python.
+
+---
+
+## How It Works
+หลักการทำงานหลักอยู่ในฟังก์ชัน `get_electricity_cost()` ซึ่งจะนำปริมาณการใช้ไฟฟ้ามาคูณกับราคาต่อหน่วย เพื่อให้ได้ยอดรวมค่าใช้จ่ายไฟฟ้าทั้งหมด.
+
+---
+
+## Usage
+ผู้ใช้สามารถเรียกใช้ฟังก์ชันได้โดยส่งค่าสองตัวแปร ได้แก่ `usage_kwh` (ปริมาณการใช้ไฟฟ้าในหน่วยกิโลวัตต์-ชั่วโมง) และ `kwh_price` (ราคาต่อหน่วยในหน่วยบาท).
+
+```python
+def get_electricity_cost(usage_kwh, kwh_price):
+    """
+    Calculates the total electricity cost based on usage and price per unit.
+
+    Parameters:
+    usage_kwh (float): The amount of electricity used in kilowatt-hours (kWh).
+    kwh_price (float): The price of electricity per unit (Bath/kWh).
+
+    Returns:
+    float: The calculated total electricity used cost.
+    """
+
+    # Calculate the total electricity cost
+    cost = usage_kwh * kwh_price
+    return cost
+
+# Example of function usage
+# Define the electricity usage and price per unit
+electricity_usage = 150.5
+price_per_kwh = 3.90
+
+# Call the function to calculate the electricity bill
+total_cost = get_electricity_cost(electricity_usage, price_per_kwh)
+
+Example Output
+โปรแกรมจะแสดงผลการคำนวณค่าใช้จ่ายไฟฟ้าทั้งหมดที่ได้:
+
+Electricity Usage: 150.5 kwh
+Price per Unit: 3.9 Baht 
+Total Electricity Cost: 586.95 Baht
