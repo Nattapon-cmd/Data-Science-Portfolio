@@ -37,3 +37,44 @@ calculate_laptop_price(release_year=2025, ram_size_gb=32)
 The program will display the final calculated price as shown below:
 The price of a 2023 laptop with 16GB RAM is: 29000.00 Baht
 The price of a 2025 laptop with 32GB RAM is: 45000.00 Baht
+
+---
+
+# Laptop Price Estimator
+
+## Overview
+
+This project is a simple Python script designed to estimate the price of a laptop. Unlike the previous version, this model uses a slightly different formula to calculate the final price based on the laptop's age and RAM size. It is a great exercise for practicing functions and conditional logic in Python.
+
+---
+
+## How It Works
+
+The core logic is contained within the `calculate_laptop_price()` function. The script uses a formula with these factors:
+
+- **Base Price:** Starts at a base price of **25,000 Baht**.
+- **Age-Based Deduction:** The price is reduced by **2,000 Baht** for every year the laptop is old.
+- **RAM-Based Increase:** The price is increased by **1,500 Baht** for every 8 GB of RAM installed above the base of 8 GB.
+- **Minimum Price:** The function ensures the price will not drop below **10,000 Baht**, even for very old laptops.
+
+---
+
+## Usage
+
+To use the function, you call it with two parameters: `year` (the year the laptop was released, e.g., 2024) and `ram_gb` (the size of the RAM in GB, e.g., 16).
+
+```python
+# Example Usage:
+# Example 1: 2024 laptop, 16 GB RAM
+laptop_option_1 = calculate_laptop_price(2024, 16)
+
+# Example 2: 2023 laptop, 32 GB RAM
+laptop_option_2 = calculate_laptop_price(2023, 32)
+
+---
+Example Output
+The program will display the calculated prices for each option. Based on the code you provided, the output will be as follows:
+Option 1: price is 35000 THB
+Option 2: Price is 57000 THB
+Option 3: Price is 25000 THB
+Option 4: Price is 103000 THB
