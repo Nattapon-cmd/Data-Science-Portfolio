@@ -135,3 +135,91 @@ The program will display the calculated total electricity cost:
 Electricity Usage: 150.5 kWh
 Price per Unit: 3.9 Baht
 Total Electricity Cost: 586.95 Baht
+
+---
+
+# Production_Cost_Calculator
+## Overview
+This project is a Python script designed to calculate the total electricity cost required to produce a specific target quantity of product (e.g., orange juice cans). It serves as a practical example for modeling industrial production costs and handling user inputs in Python.
+
+---
+
+## How It Works
+The core of the logic resides in the calculate_production_cost() function. The calculation proceeds in three main steps:
+
+Production Time: Calculates the total hours needed to meet the target_cans based on the number of machines and their individual production rate.
+
+Total Hours=
+Total Cans per Hour
+Target Cans
+​
+
+Hourly Cost: Calculates the total electricity cost per hour for all machines combined.
+
+Cost per Hour=(Machines×Energy per Machine)×Cost per Unit
+Total Cost: Multiplies the total hours by the hourly cost to find the final electricity expenses.
+
+---
+
+## Usage
+The script is run directly and prompts the user to input five critical variables:
+
+Number of production machines (e.g., 5)
+
+Cans produced per machine per hour (e.g., 2000)
+
+Energy consumed per machine per hour (units) (e.g., 15)
+
+Electricity cost per unit (baht) (e.g., 4.5)
+
+Total number of cans to be produced (e.g., 500000)
+
+---
+
+## Code Snippets
+The function below is used to perform the calculation. The main script calls this function after collecting user input.
+
+Python
+
+def calculate_production_cost( 
+num_machines, 
+cans_per_machine_per_hour, 
+energy_per_machine_per_hour, 
+cost_per_unit, 
+target_cans): 
+""" 
+Calculates the total electricity cost for orange juice production. 
+... (full docstring omitted for brevity) 
+""" 
+# Calculation steps... 
+total_cans_per_hour = num_machines * cans_per_machine_per_hour 
+if total_cans_per_hour == 0: 
+return 0 
+
+total_hours = target_cans / total_cans_per_hour 
+total_energy_per_hour = num_machines * energy_per_machine_per_hour 
+cost_per_hour = total_energy_per_hour * cost_per_unit 
+total_cost = total_hours * cost_per_hour 
+
+return total_cost
+
+# Example of function call inside the main program
+total_cost = calculate_production_cost( 
+num_machines=5, 
+cans_per_machine_per_hour=2000, 
+energy_per_machine_per_hour=15, 
+cost_per_unit=4.5, 
+target_cans=500000
+)
+ Example Output
+When the program is run with the example inputs above, the final cost will be displayed:
+
+--- Juice Production Electricity Cost Calculator ---
+Please enter the number of production machines: 5
+Please enter the number of cans produced per machine per hour: 2000
+Please enter the energy consumed per machine per hour (units): 15
+Please enter electricity cost per unit (baht): 4.5
+Please enter the total number of cans to be produced: 500000
+
+--- Result ---
+The total electricity cost to produce 500000 cans is 16875.00 baht.
