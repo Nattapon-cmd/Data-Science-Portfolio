@@ -148,15 +148,16 @@ This project is a Python script designed to calculate the total electricity cost
 The core of the logic resides in the calculate_production_cost() function. The calculation proceeds in three main steps:
 
 Production Time: Calculates the total hours needed to meet the target_cans based on the number of machines and their individual production rate.
-
+$$
 Total Hours=
 Total Cans per Hour
 Target Cans
 ​
-
+$$
 Hourly Cost: Calculates the total electricity cost per hour for all machines combined.
-
+$$
 Cost per Hour=(Machines×Energy per Machine)×Cost per Unit
+$$
 Total Cost: Multiplies the total hours by the hourly cost to find the final electricity expenses.
 
 ---
