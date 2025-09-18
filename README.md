@@ -179,7 +179,7 @@ Total number of cans to be produced (e.g., 500000)
 ## Code Snippets
 The function below is used to perform the calculation. The main script calls this function after collecting user input.
 
-Python
+python
 
 def calculate_production_cost( 
 num_machines, 
